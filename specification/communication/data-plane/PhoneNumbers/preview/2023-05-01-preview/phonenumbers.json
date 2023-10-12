@@ -850,7 +850,7 @@
         "tags": [
           "Obtain operator information for requested numbers"
         ],
-        "summary": "Searches for operator information for a given list of phone numbers.",
+        "summary": "Searches for number format and operator information for a given list of phone numbers.",
         "operationId": "PhoneNumbers_OperatorInformationSearch",
         "consumes": [
           "application/json"
@@ -863,10 +863,23 @@
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
+            "in": "query",
+            "name": "options",
+            "description": "The options for modifying an operator information search",
+            "type": "string"
+            "enum": [
+              "FormatOnly"
+            ],
+            "x-ms-enum": {
+            "name": "OperatorInformationSearchOptions",
+            "modelAsString": true
+            }
+          },
+          {
             "in": "body",
             "name": "body",
             "required": true,
-            "description": "The phone number(s) whose operator information should be searched",
+            "description": "The phone number(s) whose number format and operator information should be searched",
             "schema": {
               "$ref": "#/definitions/OperatorInformationRequest"
             }
@@ -1499,6 +1512,14 @@
       "properties": {
         "phoneNumber": {
           "description": "E.164 formatted string representation of the phone number",
+          "type": "string"
+        },
+        "nationalFormat": {
+          "description": "National format of the phone number",
+          "type": "string"
+        },
+        "internationalFormat": {
+          "description": "International format of the phone number",
           "type": "string"
         },
         "numberType": {

@@ -867,13 +867,6 @@
             "name": "options",
             "description": "The options for modifying an operator information search",
             "type": "string"
-            "enum": [
-              "FormatOnly"
-            ],
-            "x-ms-enum": {
-            "name": "OperatorInformationSearchOptions",
-            "modelAsString": true
-            }
           },
           {
             "in": "body",

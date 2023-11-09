@@ -863,18 +863,25 @@
             "$ref": "#/parameters/ApiVersionParameter"
           },
           {
-            "in": "query",
-            "name": "options",
-            "description": "The options for modifying an operator information search",
-            "type": "string"
-          },
-          {
             "in": "body",
             "name": "body",
             "required": true,
             "description": "The phone number(s) whose number format and operator information should be searched",
             "schema": {
               "$ref": "#/definitions/OperatorInformationRequest"
+            }
+          },
+          {
+            "in": "query",
+            "name": "options",
+            "description": "The options for modifying an operator information search",
+            "type": "string"
+            "enum": [
+              "FormatOnly"
+            ],
+            "x-ms-enum": {
+            "name": "OperatorInformationSearchOptions",
+            "modelAsString": true
             }
           }
         ],

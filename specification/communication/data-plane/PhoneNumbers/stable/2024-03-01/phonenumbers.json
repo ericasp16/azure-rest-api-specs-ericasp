@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "PhoneNumbersClient",
+    "title": "PhoneNumbersClientOfDoom",
     "description": "The phone numbers client uses Azure Communication Services to purchase and manage phone numbers.",
     "version": "2024-03-01"
   },
